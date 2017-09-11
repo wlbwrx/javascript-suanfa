@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.bgc{width:300px;height:200px;margin:0 auto;background-color:skyblue;}
+	</style>
+</head>
+<body id='body'>
+	<!-- <div class="bgc" id='bgc'></div> -->
+	<h4 id='h4'></h4>
+	<script type="text/javascript">
+	 var arrHex=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"],
+     strHex="#",
+     index,bgc=document.getElementById('bgc'),h4=document.getElementById('h4'),body = document.getElementById('body');
+     for(var i=0;i<6;i++){
+        index=Math.round(Math.random()*15);
+	    strHex+=arrHex[index];
+	    h4.innerHTML=strHex;
+     }
+     body.style.backgroundColor = strHex;
+	</script>
+</body>
+</html>
