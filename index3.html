@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<script src='js/jquery-1.11.1.min.js'></script>
+</head>
+<body>
+	<div class="shiyan">
+		<ul class='ul_before'>
+			<li data_arry='1'><img src="images/1.jpg" alt=""></li>
+			<li data_arry='10'><img src="images/10.jpg" alt=""></li>
+			<li data_arry='2'><img src="images/2.jpg" alt=""></li>
+			<li data_arry='3'><img src="images/3.jpg" alt=""></li>
+			<li data_arry='5'><img src="images/5.jpg" alt=""></li>
+			<li data_arry='4'><img src="images/4.jpg" alt=""></li>
+			<li data_arry='5'><img src="images/5.jpg" alt=""></li>
+			<li data_arry='6'><img src="images/6.jpg" alt=""></li>
+			<li data_arry='7'><img src="images/7.jpg" alt=""></li>
+			<li data_arry='8'><img src="images/8.jpg" alt=""></li>
+			<li data_arry='9'><img src="images/9.jpg" alt=""></li>
+			<li data_arry='5'><img src="images/5.jpg" alt=""></li>
+			<li data_arry='6'><img src="images/6.jpg" alt=""></li>
+			<li data_arry='10'><img src="images/10.jpg" alt=""></li>
+			<li data_arry='5'><img src="images/5.jpg" alt=""></li>
+		</ul>
+		<button id='quchong'>去重</button>
+		<ul id="new_ul" class='ul_after'>
+			
+		</ul>
+	</div>
+  //此为数组去重的方法，选择器用jquery了，使用要引用jquery类库包 animate.css为动态效果文件css3  可用可不用
+  <script src='js/jquery-1.11.1.min.js'></script>
+ <script>
+      Array.prototype.unique3 = function(){
+         var res = [];
+         var json = {};
+         for(var i = 0; i < this.length; i++){
+          if(!json[this[i]]){
+           res.push(this[i]);
+           json[this[i]] = 1;
+          }
+         }
+         return res;
+        }
+        var newarr = [];
+        for(var j =0;j< $('ul li').length;j++){
+          var data_arry = $('ul li').eq(j).attr('data_arry');
+          newarr.push(data_arry);
+        }		
+        // alert(newarr.unique3());
+        $('#quchong').click(function(){
+          if($('#new_ul').html('')){
+            for(var k = 1;k <= newarr.unique3().length;k++){
+              $('#new_ul').append('<li class="flipInX animated" data_arry="'+ k +'"><img src="images/'+ k +'.jpg"></li>')
+            }
+          }else{
+            alert('已经重置好了，没有重复的了');
+          }
+        });
+ </script> 
+</body>
+</html>
