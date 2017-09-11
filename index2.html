@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+//这个算法介绍计算一段字符的长度
+<body>
+	<div class="code_length" id='code_length'>
+	     不要等待，真正属于你的机遇不多，行动永远比幻想重要；不要抱怨，要直面矛盾和问题，怨天尤人只能证明你无能；不要滥交，有仨俩知己足矣，别妄想和谁都成为朋友；不要浮躁，有空去旅行，去读书，用环境陶冶身心，用知识充实灵魂；不要后悔，只要是你选择的，就算再艰难再无奈，也要咬牙走下去。
+	</div>
+	<script type="text/javascript">
+	// 空格前两个空格代表一个字符，往后一个空格代表一个字符，一个汉字代表两个字符，英文字母一个代表一个
+		var abc = document.getElementById('code_length'),str = abc.innerHTML;
+		GetBytes(str);
+		function GetBytes(str){
+		 var len=str.length,
+		     bytes=len;
+		 for(var i=0;i<len;i++){
+		   // str.CharCodeAt>255  是用来判断非常规字符的   比如中文、日文
+		   if(str.CharCodeAt>255){
+		     bytes++;
+		   }
+		 }
+		 alert(bytes);
+		}
+	</script>
+</body>
+</html>
